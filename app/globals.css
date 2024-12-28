@@ -15,7 +15,7 @@ html {
 
 body {
   font-family: var(--font-montserrat);
-  background: #000;
+  background: #101010;
   color: white;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-text {
-  color: #000;
+  color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;

@@ -1,8 +1,8 @@
 import { Montserrat } from "next/font/google";
 
 import "./globals.css";
-import Navbar from "@/sections/Navbar";
-import Footer from "@/sections/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
