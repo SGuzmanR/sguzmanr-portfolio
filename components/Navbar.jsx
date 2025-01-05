@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useState, useEffect, useRef } from "react";
@@ -35,6 +36,16 @@ const Navbar = () => {
       })
   }, []);
 
+  useGSAP(() => {
+    gsap.to('.navbar', {
+      stagger: 0.5,
+      opacity: 1,
+      translateY: 0,
+      duration: 1,
+      delay: 1.5,
+    })
+  });
+
   useEffect(() => {
     if (isOpen) {
       tl.current.play();
@@ -48,31 +59,55 @@ const Navbar = () => {
   return (
     <header ref={container}>
       <nav className={`fixed flex justify-between items-center top-0 left-0 w-[100vw] px-[2em] py-8 z-10 transition-all duration-500`}>
-        <div>
-          <Link href="/" className="text-white cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
-            SGuzmanR
+        <div className="navbar opacity-0 -translate-y-20">
+          <Link href="/" className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
+            <Image 
+              src="/logo.svg"
+              alt="SGuzmanR Logo"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
           </Link>
         </div>
 
-        <div onClick={handleOpenNav}>
-          <p className="text-white cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
-            Menu
+        <div onClick={handleOpenNav} className="navbar opacity-0 -translate-y-20">
+          <p className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
+            <Image 
+              src="/hm.svg"
+              alt="Hamburger Menu Open"
+              width={25}
+              height={25}
+              className="object-contain"
+            />
           </p>
         </div>
       </nav>
 
-      <div id="navbar-overlay" className="fixed flex top-0 left-0 w-[100vw] h-[100vh] p-[2em] pt-16 bg-neutral-900 z-20 gap-16">
+      <div id="navbar-overlay" className="fixed flex top-0 left-0 w-[100vw] h-[100vh] p-[2em] pt-16 bg-secondaryGrayDark z-30 gap-16 px-48 lg:px-40 md:px-36 sm:px-6 max-sm:px-5">
         <div className="fixed flex justify-between items-center top-0 left-0 w-[100vw] p-[2em] z-10">
           <div>
-            <Link href="/" className="navbar-text">SGuzmanR</Link>
+            <Link href="/" className="navbar-text">
+              <Image 
+                src="/logo.svg"
+                alt="SGuzmanR Logo"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+            </Link>
           </div>
           <div className="menu-close" onClick={handleOpenNav}>
-            <p className="navbar-text cursor-pointer">Close</p>
+            <p className="navbar-text cursor-pointer">
+              <Image 
+                src="/hm_close.svg"
+                alt="Hamburger Menu Open"
+                width={25}
+                height={25}
+                className="object-contain"
+              />
+            </p>
           </div>
-        </div>
-
-        <div className="flex-2 flex items-end cursor-pointer max-[900px]:hidden" onClick={handleOpenNav}>
-          <p className="text-[100px] leading-[70%] text-white hover:scale-105 transition-all duration-500">&#x2715;</p>
         </div>
 
         <div className="flex-4 flex flex-col justify-between pt-[2em] w-full">
@@ -80,7 +115,7 @@ const Navbar = () => {
             {navLinks.map((link, i) => (
               <div id="navbar-link-item" className="w-max" key={i}>
                 <div id="navbar-link-item-holder" className="relative max-[900px]:text-[60px]" onClick={handleOpenNav}>
-                  <Link href={link.href} className="flex text-white text-[80px] max-sm:text-[40px] font-normal tracking-[-0.02em] leading-[85%] uppercase hover:underline">
+                  <Link href={link.href} className="flex text-primaryWhite text-[80px] max-sm:text-[40px] font-normal tracking-[-0.02em] leading-[85%] uppercase hover:underline">
                     {link.name}
                   </Link>
                 </div>
@@ -105,9 +140,11 @@ const Navbar = () => {
               </p>
             </div>
 
-            {/* <div className="flex-4 flex items-end justify-end">
-              <p className="navbar-text cursor-pointer hover:font-bold">View Showreel</p>
-            </div> */}
+            <div className="flex-4 flex items-end justify-end">
+              <p className="navbar-text cursor-pointer hover:font-bold">
+                Contactame
+              </p>
+            </div>
           </div>
         </div>
 

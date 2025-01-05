@@ -9,11 +9,10 @@ import {
 } from "@tabler/icons-react";
 
 export const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "About Me", href: "#about" },
-  { name: "Contact", href: "#contact" },
-  // { name: "ACO", href: "#aco" },
+  { name: "Inicio", href: "/" },
+  { name: "Portafolio", href: "#portfolio" },
+  { name: "Sobre Mi", href: "#about" },
+  { name: "Contacto", href: "#contact" },
 ];
 
 export const socialLinks = [
@@ -25,18 +24,11 @@ export const socialLinks = [
 
 export const floatingDockLinks = [
   {
-    title: "Home",
+    title: "Inicio",
     icon: (
       <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "/",
-  },
-  {
-    title: "Instagram",
-    icon: (
-      <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "https://www.instagram.com/sguzmanr_/",
   },
   {
     title: "Linkedin",
@@ -59,4 +51,50 @@ export const floatingDockLinks = [
     ),
     href: "https://gitlab.com/SGuzmanR",
   },
-]
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "BikeHub",
+    des: "",
+    img: "/p1.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "/ui.earth.com",
+  },
+  {
+    id: 2,
+    title: "Awwwards",
+    des: "",
+    img: "/p2.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "/ui.yoom.com",
+  },
+  {
+    id: 3,
+    title: "XORA Saas Landing Page",
+    des: "",
+    img: "/p3.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "/ui.aiimg.com",
+  },
+  {
+    id: 4,
+    title: "Animated Apple Iphone 3D Website",
+    des: "Recreated the Apple iPhone 15 Pro website, implementing GSAP animations",
+    img: "/p4.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/gsap.svg"],
+    link: "https://sguzmanr.github.io/apple_website/",
+  },
+];
+
+/*
+Contactarme por WhatsApp o correo para trabajos de programacion
+
+Seccion de ACO directo a whatsapp para vender algo
+
+Diseño publicitario
+Creacion de marcas
+Arreglo/Ensamble de computadoras de escritorio y portatiles
+Programacion paginas web Full Stack (JavaScript, React, NextJS, TailwindCSS, GSAP, Framer Motion, AceternityUI / C#)
+ */
