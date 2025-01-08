@@ -1,4 +1,5 @@
 import {
+  IconBrandBehance,
   IconBrandGithub,
   IconBrandGitlab,
   IconBrandInstagram,
@@ -12,24 +13,17 @@ export const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Portafolio", href: "#portfolio" },
   { name: "Sobre Mi", href: "#about" },
-  { name: "Contacto", href: "#contact" },
+  { name: "Contacto", href: "#contactme" },
 ];
 
 export const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/sguzmanr_/" },
   { name: "Linkedin", href: "https://www.linkedin.com/in/sergio-g-308737295/" },
   { name: "Github", href: "https://github.com/SGuzmanR?tab=overview&from=2024-12-01&to=2024-12-28" },
   { name: "Gitlab", href: "https://gitlab.com/SGuzmanR" },
+  { name: "Behance", href: "https://www.behance.net/sguzmanr" },
 ];
 
 export const floatingDockLinks = [
-  {
-    title: "Inicio",
-    icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "/",
-  },
   {
     title: "Linkedin",
     icon: (
@@ -50,6 +44,13 @@ export const floatingDockLinks = [
       <IconBrandGitlab className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
     href: "https://gitlab.com/SGuzmanR",
+  },
+  {
+    title: "Behance",
+    icon: (
+      <IconBrandBehance className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://www.behance.net/sguzmanr",
   },
 ];
 
@@ -87,14 +88,3 @@ export const projects = [
     link: "https://sguzmanr.github.io/apple_website/",
   },
 ];
-
-/*
-Contactarme por WhatsApp o correo para trabajos de programacion
-
-Seccion de ACO directo a whatsapp para vender algo
-
-Diseño publicitario
-Creacion de marcas
-Arreglo/Ensamble de computadoras de escritorio y portatiles
-Programacion paginas web Full Stack (JavaScript, React, NextJS, TailwindCSS, GSAP, Framer Motion, AceternityUI / C#)
- */

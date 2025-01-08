@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { useState, useEffect, useRef } from "react";
 
 import { navLinks, socialLinks } from "@/constants";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
   const container = useRef();
@@ -38,11 +39,10 @@ const Navbar = () => {
 
   useGSAP(() => {
     gsap.to('.navbar', {
-      stagger: 0.5,
+      stagger: 0.3,
       opacity: 1,
-      translateY: 0,
       duration: 1,
-      delay: 1.5,
+      delay: 2.5,
     })
   });
 
@@ -58,55 +58,54 @@ const Navbar = () => {
 
   return (
     <header ref={container}>
-      <nav className={`fixed flex justify-between items-center top-0 left-0 w-[100vw] px-[2em] py-8 z-10 transition-all duration-500`}>
-        <div className="navbar opacity-0 -translate-y-20">
-          <Link href="/" className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
+      <nav className="fixed top-0 left-0 flex w-full paddingX py-8 z-10 transition-all duration-500">
+        <div className="flex flex-row justify-between w-full items-center">
+          <Link href="/" className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline navbar opacity-0">
             <Image 
               src="/logo.svg"
               alt="SGuzmanR Logo"
-              width={80}
-              height={80}
+              width={90}
+              height={90}
               className="object-contain"
             />
           </Link>
-        </div>
 
-        <div onClick={handleOpenNav} className="navbar opacity-0 -translate-y-20">
-          <p className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
-            <Image 
-              src="/hm.svg"
-              alt="Hamburger Menu Open"
-              width={25}
-              height={25}
-              className="object-contain"
-            />
-          </p>
-        </div>
-      </nav>
+          <div className="flex flex-row items-center justify-center gap-4 navbar opacity-0">
+            <ThemeSwitcher />
 
-      <div id="navbar-overlay" className="fixed flex top-0 left-0 w-[100vw] h-[100vh] p-[2em] pt-16 bg-secondaryGrayDark z-30 gap-16 px-48 lg:px-40 md:px-36 sm:px-6 max-sm:px-5">
-        <div className="fixed flex justify-between items-center top-0 left-0 w-[100vw] p-[2em] z-10">
-          <div>
-            <Link href="/" className="navbar-text">
+            <p className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline" onClick={handleOpenNav}>
               <Image 
-                src="/logo.svg"
-                alt="SGuzmanR Logo"
-                width={80}
-                height={80}
-                className="object-contain"
-              />
-            </Link>
-          </div>
-          <div className="menu-close" onClick={handleOpenNav}>
-            <p className="navbar-text cursor-pointer">
-              <Image 
-                src="/hm_close.svg"
+                src="/hm.svg"
                 alt="Hamburger Menu Open"
                 width={25}
                 height={25}
                 className="object-contain"
               />
             </p>
+          </div>
+        </div>
+      </nav>
+
+      <div id="navbar-overlay" className="fixed flex top-0 left-0 w-full h-[100vh] p-[2em] pt-20 text-primaryWhite bg-secondaryBlack dark:bg-secondaryDark dark:text-primaryWhite z-30 gap-16 paddingX">
+        <div className="fixed flex justify-between items-center top-0 left-0 w-full paddingX py-8 z-10">
+          <Link href="/" className="navbar-text">
+            <Image 
+              src="/logo.svg"
+              alt="SGuzmanR Logo"
+              width={90}
+              height={90}
+              className="object-contain"
+            />
+          </Link>
+          
+          <div className="navbar-text cursor-pointer" onClick={handleOpenNav}>
+            <Image 
+              src="/hm_close.svg"
+              alt="Hamburger Menu Open"
+              width={25}
+              height={25}
+              className="object-contain"
+            />
           </div>
         </div>
 
@@ -123,10 +122,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-6 max-sm:items-start">
+          <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-6 max-sm:items-start text-secondaryGrayLight">
             <div className="flex-1 flex flex-col justify-end gap-1">
               {socialLinks.map((link, i) => (
-                <Link key={i} href={link.href} className="navbar-text hover:underline">
+                <Link key={i} href={link.href} className="navbar-text hover:underline" onClick={handleOpenNav}>
                   {link.name}
                 </Link>
               ))}
@@ -141,9 +140,9 @@ const Navbar = () => {
             </div>
 
             <div className="flex-4 flex items-end justify-end">
-              <p className="navbar-text cursor-pointer hover:font-bold">
+              <Link href="#contactme" className="navbar-text cursor-pointer hover:font-bold" onClick={handleOpenNav}>
                 Contactame
-              </p>
+              </Link>
             </div>
           </div>
         </div>

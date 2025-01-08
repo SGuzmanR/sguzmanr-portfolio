@@ -1,5 +1,24 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+ 
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,12 +28,13 @@ module.exports = {
     extend: {
       colors: {
         primaryWhite: '#fafaffff',
+        secondaryGrayLight: '#8f949fff',
         secondaryGray: '#747a88ff',
-        secondaryGrayLight: '#8F949F',
-        secondaryGrayDark: '#2f2f2fff',
-        secondaryGrayDarker: '#5D626D',
+        secondaryGrayDark: '#5D626D',
+        secondaryBlack: '#2f2f2fff',
+        secondaryDark: '#262626'
       }
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 }

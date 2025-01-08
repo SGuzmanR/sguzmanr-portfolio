@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/lib/ThemeProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -10,8 +11,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "SGuzmanR Portfolio",
-  description: "Explore the portfolio of SGuzmanR, a full stack developer &digital solution specialist, a skilled web developer and UX/UI designer. Specializing in modern front-end technologies like React, JavaScript, and creating user-centric designs to enhance digital experiences.",
+  title: "SGuzmanR Portafolio",
+  description: "Explora mi portafolio, Desarrollador Full Stack, Diseñador Grafico y Tecnico en Computadoras.",
   author: "Sergio Guzman",
   keywords: [
     "Full Stack",
@@ -20,30 +21,26 @@ export const metadata = {
     "UX/UI Designer",
     "Front-End Development",
     "Back-End Development",
-    "JavaScript",
-    "React",
     "Web Design Portfolio",
-    "User Experience Design",
-    "Responsive Web Design",
-    "UI/UX Projects",
-    "HTML/CSS",
     "Web Application Development",
     "Creative Web Solutions",
     "Digital Design Portfolio",
-    "CI/CD",
-    "Node.js",
-    "MongoDB",
-    "SQL"
   ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${montserrat.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${montserrat.variable} antialiased bg-primaryWhite dark:bg-secondaryBlack`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
