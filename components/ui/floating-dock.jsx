@@ -56,7 +56,7 @@ const FloatingDockMobile = ({
                   key={item.title}
                   target="_blank"
                   className="h-10 w-10 rounded-full bg-secondaryGrayDark text-primaryWhite flex items-center justify-center">
-                  <div className="h-4 w-4 pb-6">{item.icon}</div>
+                  <div className="h-4 w-4 text-primaryWhite">{item.icon}</div>
                 </Link>
               </motion.div>
             ))}
@@ -65,8 +65,8 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-secondaryGrayDark flex items-center justify-center">
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-primaryWhite" />
+        className="h-10 w-10 rounded-full bg-secondaryGrayDark text-primaryWhite flex items-center justify-center">
+        <IconLayoutNavbarCollapse className="h-5 w-5" />
       </button>
     </div>)
   );
@@ -157,7 +157,7 @@ function IconContainer({
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center text-primaryWhite">
+          className="flex items-center justify-center bg-secondaryGrayDark text-primaryWhite">
           {icon}
         </motion.div>
       </motion.div>
