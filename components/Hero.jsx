@@ -41,7 +41,7 @@ const Hero = () => {
       <div className="mt-14">
         <Link href="https://www.linkedin.com/in/sergio-g-308737295/" className="rounded-3xl text-base bg-secondaryGrayDark hover:bg-transparent hover:border-secondaryGrayDark border-secondaryGrayDark border-2 text-primaryWhite hover:text-secondaryGrayLight px-6 py-4 transition-all duration-300 subtitle opacity-0">Trabaja Conmigo</Link>
       </div>
-
+      
       <BackgroundBeams />
     </section>
   )

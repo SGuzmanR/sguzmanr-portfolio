@@ -10,19 +10,6 @@ const ThemeSwitcher = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
   
   const toggleTheme = () => {
-    gsap.fromTo(
-      ".theme-button", 
-      {
-        opacity: 0, 
-        scale: 0.5,
-      }, 
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.3,
-        ease: "back.out(1.7)",
-      });
-
     setTheme(currentTheme === "dark" ? "light" : "dark");
   };
 
@@ -35,7 +22,7 @@ const ThemeSwitcher = () => {
       <button
         onClick={toggleTheme}
         type="button"
-        className="theme-button flex h-7 w-7 items-center justify-center text-secondaryGray dark:text-secondaryGray"
+        className="flex h-7 w-7 items-center justify-center text-secondaryGray dark:text-secondaryGray"
       >
         <svg
           className="dark:hidden"
