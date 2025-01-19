@@ -10,14 +10,14 @@ const Hero = () => {
   useGSAP(() => {
     gsap.to('#title', {
       opacity: 1,
-      delay: 0.5,
+      delay: 4.5,
       duration: 1,
       ease: "power1.in",
     });
     
     gsap.to('.subtitle', {
       opacity: 1,
-      delay: 1,
+      delay: 5,
       duration: 1,
       translateY: 0,
       ease: "power1.out",

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/lib/ThemeProvider";
+import Preloader from "@/components/Preloader";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -37,9 +38,11 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
         >
+          <Preloader />
+
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

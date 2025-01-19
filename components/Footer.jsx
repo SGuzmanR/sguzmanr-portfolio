@@ -1,12 +1,12 @@
-import Image from "next/image";
+ import Image from "next/image";
 import Link from "next/link";
 
 import { navLinks } from "@/constants";
 
 const Footer = () => {
   return (
-    <footer className="paddingX flex flex-col w-full justify-center items-center py-6 gap-4 text-sm">
-      <div className="flex justify-between items-center w-full">
+    <footer className="paddingX flex flex-col w-full justify-center items-center gap-4 mb-[120px] max-sm:mb-[40px]">
+      <div className="flex justify-between items-end w-full max-sm:flex-col max-sm:items-start max-sm:gap-5">
         <div>
           <Link href="/" className="cursor-pointer uppercase text-[14px] font-medium leading-[100%] no-underline">
             <Image 
@@ -19,16 +19,16 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row max-[380px]:flex-col max-[640px]:flex-row max-sm:gap-2 gap-4 text-primaryWhite">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
+            <Link key={link.name} href={link.href} className="hover:underline">
               {link.name}
             </Link>
           ))} 
         </div>
       </div>
 
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between w-full text-sm text-secondaryGrayLight max-sm:flex-col max-sm:gap-2">
         <div>
           Copyrigth &copy;2025 | SGuzmanR
         </div>

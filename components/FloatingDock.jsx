@@ -9,7 +9,7 @@ const FloatingDock = () => {
   useGSAP(() => {
     gsap.to('#floatingDock', {
       opacity: 1,
-      delay: 2.5,
+      delay: 4,
       duration: 1.5,
     });
   });

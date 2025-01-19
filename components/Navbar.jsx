@@ -10,14 +10,31 @@ import { navLinks, socialLinks } from "@/constants";
 import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
-  const container = useRef();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  const container = useRef();
   const tl = useRef();
 
   const handleOpenNav = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    };
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useGSAP(() => {
     gsap.set("#navbar-link-item-holder", { y: 75 });
@@ -39,12 +56,31 @@ const Navbar = () => {
 
   useGSAP(() => {
     gsap.to('.navbar', {
-      stagger: 0.3,
+      stagger: {
+        amount: 0.5,
+      },
       opacity: 1,
-      duration: 1,
-      delay: 2.5,
-    })
+      duration: 1.5,
+      delay: 4,
+      ease: "power4.inOut",
+    });
   });
+
+  useEffect(() => {
+    if (isScrolled) {
+      gsap.to(".navbar", { 
+        y: -200, 
+        duration: 0.3, 
+        ease: 'power4.in' 
+      });
+    } else {
+      gsap.to(".navbar", { 
+        y: "0%", 
+        duration: 0.3,
+        ease: 'power4.out' 
+      });
+    }
+  }, [isScrolled]);
 
   useEffect(() => {
     if (isOpen) {
