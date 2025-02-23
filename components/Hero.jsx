@@ -1,50 +1,73 @@
 "use client"
 
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import Link from "next/link";
-
-import { BackgroundBeams } from "./ui/background-beams";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useEffect } from "react";
 
 const Hero = () => {
-  useGSAP(() => {
-    gsap.to('#title', {
-      opacity: 1,
-      delay: 4.5,
-      duration: 1,
-      ease: "power1.in",
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top center',
+        end: 'bottom center',
+        // markers: true,
+        toggleActions: "play reverse play reverse",
+      }
     });
-    
-    gsap.to('.subtitle', {
+
+    tl.fromTo(".hero-title", {
+      opacity: 0,
+      translateY: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
       opacity: 1,
-      delay: 5,
-      duration: 1,
       translateY: 0,
-      ease: "power1.out",
-    });
-  });
+      clipPath: "inset(0% 0% 0% 0%)",
+      ease: "power4.inOut",
+      delay: 0.5,
+      stagger: 0.1,
+    })
+    .fromTo(".hero-subtitle", {
+      opacity: 0,
+      translateY: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
+      ease: "sine.inOut",
+      delay: 0,
+      opacity: 1,
+      translateY: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+    })
+  }, []); 
 
   return (
-    <section className='w-full py-36 paddingX flex flex-col justify-center items-center text-wrap h-[100vh]'>
-      <div className='text-sm font-normal text-center'>
-        <h1 id="title" className="text-secondaryGrayLight opacity-0">
-          Hola! Soy <span>Sergio Guzman</span> <br /> Desarrollador Full Stack - Diseñador Grafico - Tecnico Computadores
-        </h1>
-      </div>
+    <section id="hero" className="w-screen h-screen bg-radial-black">
+      <div className="paddingX w-full h-full flex flex-col justify-end items-center pb-20 gap-24">
+        <div className="hero-wrapper flex flex-col justify-end items-end">
+          <p className="hero-title uppercase font-montserrat font-black leading-[.8] text-[15vw]">
+            Sergio
+          </p> 
+          <div className="font-birthstone text-[96px] max-sm:text-[50px] leading-[.8] flex flex-row">
+            <p className="hero-title">G</p>
+            <p className="hero-title">u</p>
+            <p className="hero-title">z</p>
+            <p className="hero-title">m</p>
+            <p className="hero-title">a</p>
+            <p className="hero-title">n</p>
+          </div>
+        </div>
 
-      <div>
-        <p className="mt-4 text-7xl md:text-5xl lg:text-6xl sm:text-4xl max-sm:text-3xl font-bold text-center text-secondaryGrayDark dark:text-primaryWhite subtitle opacity-0 translate-y-20">
-          Transformando Conceptos en <br /> Experiencias Fluidas
-        </p>
+        <div>
+          <p className="hero-subtitle font-montserrat text-[15px] max-sm:text-[13px] text-center">
+            Desarrollador Full Stack & <br /> Diseñador Grafico
+          </p>
+        </div>
       </div>
-
-      <div className="mt-14">
-        <Link href="https://www.linkedin.com/in/sergio-g-308737295/" className="rounded-3xl text-base bg-secondaryGrayDark hover:bg-transparent hover:border-secondaryGrayDark border-secondaryGrayDark border-2 text-primaryWhite hover:text-secondaryGrayLight px-6 py-4 transition-all duration-300 subtitle opacity-0">Trabaja Conmigo</Link>
-      </div>
-      
-      <BackgroundBeams />
     </section>
   )
-}
+};
 
-export default Hero
+export default Hero;

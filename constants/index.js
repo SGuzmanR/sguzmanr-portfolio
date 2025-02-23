@@ -1,90 +1,96 @@
-import {
-  IconBrandBehance,
-  IconBrandGithub,
-  IconBrandGitlab,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from "@tabler/icons-react";
-
 export const navLinks = [
-  { name: "Inicio", href: "/" },
-  { name: "Portafolio", href: "#portfolio" },
   { name: "Sobre Mi", href: "#about" },
-  { name: "Contacto", href: "#contactme" },
+  { name: "Portafolio", href: "#portfolio" },
+  // { name: "Servicios", href: "#services" },
+  { name: "Contacto", href: "#contact" },
 ];
 
 export const socialLinks = [
-  { name: "Linkedin", href: "https://www.linkedin.com/in/sergio-g-308737295/" },
-  { name: "Github", href: "https://github.com/SGuzmanR?tab=overview&from=2024-12-01&to=2024-12-28" },
-  { name: "Gitlab", href: "https://gitlab.com/SGuzmanR" },
-  { name: "Behance", href: "https://www.behance.net/sguzmanr" },
-];
-
-export const floatingDockLinks = [
-  {
-    title: "Linkedin",
-    icon: (
-      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+  { 
+    name: "Linkedin", 
     href: "https://www.linkedin.com/in/sergio-g-308737295/",
+    src: ( 
+      <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+    )
   },
-  {
-    title: "GitHub",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+  { 
+    name: "Github", 
     href: "https://github.com/SGuzmanR?tab=overview&from=2024-12-01&to=2024-12-28",
+    src: (
+      <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+    )
   },
-  {
-    title: "Gitlab",
-    icon: (
-      <IconBrandGitlab className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+  { 
+    name: "Gitlab", 
     href: "https://gitlab.com/SGuzmanR",
+    src: (
+      <path d="M503.5 204.6L502.8 202.8L433.1 21C431.7 17.5 429.2 14.4 425.9 12.4C423.5 10.8 420.8 9.9 417.9 9.6C415 9.3 412.2 9.7 409.5 10.7C406.8 11.7 404.4 13.3 402.4 15.5C400.5 17.6 399.1 20.1 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.1 111.5 17.6 109.6 15.5C107.6 13.4 105.2 11.7 102.5 10.7C99.9 9.7 97 9.3 94.1 9.6C91.3 9.9 88.5 10.8 86.1 12.4C82.8 14.4 80.3 17.5 78.9 21L9.3 202.8L8.5 204.6C-1.5 230.8-2.7 259.6 5 286.6C12.8 313.5 29.1 337.3 51.5 354.2L51.7 354.4L52.3 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z"/>
+     )
   },
-  {
-    title: "Behance",
-    icon: (
-      <IconBrandBehance className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
+  { 
+    name: "Behance", 
     href: "https://www.behance.net/sguzmanr",
+    src: (
+      <path d="M232 237.2c31.8-15.2 48.4-38.2 48.4-74 0-70.6-52.6-87.8-113.3-87.8H0v354.4h171.8c64.4 0 124.9-30.9 124.9-102.9 0-44.5-21.1-77.4-64.7-89.7zM77.9 135.9H151c28.1 0 53.4 7.9 53.4 40.5 0 30.1-19.7 42.2-47.5 42.2h-79v-82.7zm83.3 233.7H77.9V272h84.9c34.3 0 56 14.3 56 50.6 0 35.8-25.9 47-57.6 47zm358.5-240.7H376V94h143.7v34.9zM576 305.2c0-75.9-44.4-139.2-124.9-139.2-78.2 0-131.3 58.8-131.3 135.8 0 79.9 50.3 134.7 131.3 134.7 61.3 0 101-27.6 120.1-86.3H509c-6.7 21.9-34.3 33.5-55.7 33.5-41.3 0-63-24.2-63-65.3h185.1c.3-4.2 .6-8.7 .6-13.2zM390.4 274c2.3-33.7 24.7-54.8 58.5-54.8 35.4 0 53.2 20.8 56.2 54.8H390.4z"/>
+    )
   },
 ];
 
 export const projects = [
+  // {
+  //   id: 1,
+  //   title: "MADAW",
+  //   des: "",
+  //   img: "/projects/P1.png",
+  //   imgAlt: "/projects/P1_2.png",
+  //   link: "",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Publision",
+  //   des: "",
+  //   img: "/projects/P2.png",
+  //   imgAlt: "/projects/P2_2.png",
+  //   link: "",
+  // },
+  // {
+  //   id: 3,
+  //   title: " - Red Social",
+  //   des: "",
+  //   img: "/projects/P3.png",
+  //   imgAlt: "/projects/P3_2.png",
+  //   link: "",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Zentry Awwwards",
+  //   des: "",
+  //   img: "/projects/P4.png",
+  //   imgAlt: "/projects/P4_2.png",
+  //   link: "",
+  // },
   {
-    id: 1,
+    id: 5,
     title: "BikeHub",
-    des: "",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    des: "Exposición de Motos",
+    img: "/projects/P5.png",
+    imgAlt: "/projects/P5_2.png",
+    link: "https://bikehub-two.vercel.app/",
   },
   {
-    id: 2,
-    title: "Awwwards",
-    des: "",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
-  },
-  {
-    id: 3,
-    title: "XORA Saas Landing Page",
-    des: "",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, implementing GSAP animations",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/gsap.svg"],
+    id: 6,
+    title: "Apple Website",
+    des: "Clon página oficial de Apple 15",
+    img: "/projects/P6.png",
+    imgAlt: "/projects/P6_2.png",
     link: "https://sguzmanr.github.io/apple_website/",
   },
+  // {
+  //   id: 7,
+  //   title: "Movie App",
+  //   des: "",
+  //   img: "/projects/P7.png",
+  //   imgAlt: "/projects/P7_2.png",
+  //   link: "",
+  // },
 ];

@@ -1,14 +1,19 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Birthstone } from "next/font/google";
 
 import "./globals.css";
+import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThemeProvider from "@/lib/ThemeProvider";
-import Preloader from "@/components/Preloader";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+});
+
+const birthstone = Birthstone({
+  variable: "--font-birthstone",
+  subsets: ["latin"],
+  weight: '400'
 });
 
 export const metadata = {
@@ -32,18 +37,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${montserrat.variable} antialiased bg-primaryWhite dark:bg-secondaryBlack`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        >
-          <Preloader />
+      <body className={`${montserrat.variable} ${birthstone.variable} antialiased bg-black text-white`}>
+        {/* <Preloader /> */}
 
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,15 +1,18 @@
-import FloatingDock from "@/components/FloatingDock";
+"use client"
+
+import useLenis from "@/hooks/useLenis";
 import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe";
 import Projects from "@/components/Projects";
-import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
+  useLenis();
+
   return (
     <main className="overflow-hidden">
-      <FloatingDock />
       <Hero />
-      {/* <Projects />
-      <ContactMe /> */}
+      <AboutMe />
+      <Projects />
     </main>
   );
 }
