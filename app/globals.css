@@ -202,15 +202,38 @@ body {
   .slide-main-img {
     width: 70%;
     height: 40%;
+    top: 50%;
   }
 
   .slide-copy {
-    top: 18%;
-    left: 75%;
+    top: 25%;
+    left: 45%;
   }
 
   .slide-footer {
-    bottom: 12%;
+    bottom: 14%;
+  }
+}
+
+@media (max-width: 500px) {
+  .slide-main-img {
+    top: 50%;
+  }
+
+  .slide-copy {
+    top: 20%;
+    left: 68%;
+  }
+}
+
+@media (max-width: 450px) {
+  .slide-main-img {
+    top: 30%;
+  }
+
+  .slide-copy {
+    top: 20%;
+    left: 74%;
   }
 }
 
@@ -220,7 +243,8 @@ body {
   }
 
   .slide-copy {
-    left: 90%;
+    top: 20%;
+    left: 80%;
   }
 }
 
