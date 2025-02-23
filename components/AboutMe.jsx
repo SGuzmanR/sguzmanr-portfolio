@@ -52,7 +52,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <section id='about' className='relative h-screen bg-white z-20'>
+    <section id='about' className='relative h-svh bg-white z-20'>
       <div className='vertical-line w-1 h-full bg-radial-black absolute left-[10%] top-0' />
 
       <div className='h-full w-full flex py-32 paddingX about-wrapper flex-col items-end justify-center text-black text-end text-wrap'>

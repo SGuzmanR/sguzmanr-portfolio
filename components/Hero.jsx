@@ -44,7 +44,7 @@ const Hero = () => {
   }, []); 
 
   return (
-    <section id="hero" className="w-screen h-screen bg-radial-black">
+    <section id="hero" className="w-screen h-svh bg-radial-black">
       <div className="paddingX w-full h-full flex flex-col justify-end items-center pb-20 gap-24">
         <div className="hero-wrapper flex flex-col justify-end items-end">
           <p className="hero-title uppercase font-montserrat font-black leading-[.8] text-[15vw]">
