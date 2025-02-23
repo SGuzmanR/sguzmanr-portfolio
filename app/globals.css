@@ -228,7 +228,7 @@ body {
 }
 
 /* SELECTION COLOR */
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
   color: #353535;
   background: #FAFAFF;
 }

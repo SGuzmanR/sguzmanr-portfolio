@@ -1,7 +1,8 @@
 export const navLinks = [
   { name: "Sobre Mi", href: "#about" },
   { name: "Portafolio", href: "#portfolio" },
-  // { name: "Servicios", href: "#services" },  { name: "Contacto", href: "#contact" },
+  // { name: "Servicios", href: "#services" },  
+  // { name: "Contacto", href: "#contact" },
 ];
 
 export const socialLinks = [
@@ -20,10 +21,10 @@ export const socialLinks = [
     )
   },
   { 
-    name: "Gitlab", 
-    href: "https://gitlab.com/SGuzmanR",
+    name: "Artstation", 
+    href: "https://www.artstation.com/sguzmanr",
     src: (
-      <path d="M503.5 204.6L502.8 202.8L433.1 21C431.7 17.5 429.2 14.4 425.9 12.4C423.5 10.8 420.8 9.9 417.9 9.6C415 9.3 412.2 9.7 409.5 10.7C406.8 11.7 404.4 13.3 402.4 15.5C400.5 17.6 399.1 20.1 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.1 111.5 17.6 109.6 15.5C107.6 13.4 105.2 11.7 102.5 10.7C99.9 9.7 97 9.3 94.1 9.6C91.3 9.9 88.5 10.8 86.1 12.4C82.8 14.4 80.3 17.5 78.9 21L9.3 202.8L8.5 204.6C-1.5 230.8-2.7 259.6 5 286.6C12.8 313.5 29.1 337.3 51.5 354.2L51.7 354.4L52.3 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z"/>
+      <path d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3 447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z" />
      )
   },
   { 
@@ -60,28 +61,20 @@ export const projects = [
   //   imgAlt: "/projects/P3_2.png",
   //   link: "",
   // },
-  // {
-  //   id: 4,
-  //   title: "Zentry Awwwards",
-  //   des: "",
-  //   img: "/projects/P4.png",
-  //   imgAlt: "/projects/P4_2.png",
-  //   link: "",
-  // },
   {
     id: 5,
     title: "BikeHub",
     des: "Exposición de Motos",
-    img: "projects/P5.png",
-    imgAlt: "projects/P5_2.png",
+    img: "public/projects/P5.png",
+    imgAlt: "public/projects/P5_2.png",
     link: "https://bikehub-two.vercel.app/",
   },
   {
     id: 6,
     title: "Apple Website",
     des: "Clon página oficial de Apple 15",
-    img: "projects/P6.png",
-    imgAlt: "projects/P6_2.png",
+    img: "public/projects/P6.png",
+    imgAlt: "public/projects/P6_2.png",
     link: "https://sguzmanr.github.io/apple_website/",
   },
   // {
@@ -90,6 +83,14 @@ export const projects = [
   //   des: "",
   //   img: "/projects/P7.png",
   //   imgAlt: "/projects/P7_2.png",
+  //   link: "https://movie-app-ecru-beta.vercel.app/",
+  // },
+    // {
+  //   id: 4,
+  //   title: "Zentry Awwwards",
+  //   des: "https://zentry-awwwards-ruby.vercel.app/",
+  //   img: "/projects/P4.png",
+  //   imgAlt: "/projects/P4_2.png",
   //   link: "",
   // },
 ];

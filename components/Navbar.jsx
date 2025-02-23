@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import gsap from "gsap";
@@ -94,7 +94,7 @@ const Navbar = () => {
   return (
     <header ref={navContainer} className="absolute w-full h-auto">
       {/* Mobile Nav */}
-      <div id="nav-mobile_overlay" className="fixed top-0 left-0 hidden max-sm:flex h-svh w-screen bg-white z-30 -translate-y-[100%] paddingX flex-col pb-40 gap-10">
+      <div id="nav-mobile_overlay" className="fixed top-0 left-0 hidden max-sm:flex h-screen w-screen bg-white z-30 -translate-y-[100%] paddingX flex-col pb-40 gap-10">
         <div className="flex w-full pt-8 justify-end items-end">
           <svg
             width="80"

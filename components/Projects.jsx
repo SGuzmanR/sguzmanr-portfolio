@@ -277,7 +277,7 @@ const Slider = () => {
 
   return (
     <section id='portfolio' className='w-full h-auto'>
-      <div className='portfolio-intro relative w-full h-[15lvh] bg-white'>
+      <div className='portfolio-intro relative w-full h-[15vh] bg-white'>
         <div className='absolute portfolio-bg bg-radial-black w-full h-full flex items-center justify-center z-20'>
           <h2 className='font-montserrat font-bold text-[6vw] max-sm:text-[12vw] text-white'>PORTAFOLIO</h2>
         </div>

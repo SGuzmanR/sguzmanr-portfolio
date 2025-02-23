@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import gsap from "gsap";
@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="paddingX flex flex-col w-full justify-center items-center gap-4 py-6 h-autp">
+    <footer id="contact" className="paddingX flex flex-col w-full justify-center items-center gap-4 py-6 h-auto">
       {/* <div className="w-full h-[90vh]">
 
       </div> */}
