@@ -29,7 +29,6 @@ const Navbar = () => {
       .to(".mobile-open_svg", {
         scaleY: .05,
         ease: "sine.inOut",
-        zIndex: 30,
       })
       .to("#nav-mobile_overlay", {
         duration: .50,
@@ -65,10 +64,10 @@ const Navbar = () => {
   useEffect(() => {
     if (openNav) {
       tl.current.play();
-      document.body.style.display = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
       tl.current.reverse();
-      document.body.style.display = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [openNav]);
 
@@ -95,8 +94,21 @@ const Navbar = () => {
   return (
     <header ref={navContainer} className="absolute w-full h-auto">
       {/* Mobile Nav */}
-      <div id="nav-mobile_overlay" className="fixed top-0 left-0 hidden max-sm:flex h-screen w-screen bg-white z-30 -translate-y-[100%] paddingX">
-        <div className="w-full h-full flex flex-col justify-between items-center py-40">
+      <div id="nav-mobile_overlay" className="fixed top-0 left-0 hidden max-sm:flex h-svh w-screen bg-white z-30 -translate-y-[100%] paddingX flex-col pb-40 gap-10">
+        <div className="flex w-full pt-8 justify-end items-end">
+          <svg
+            width="80"
+            height="100%"
+            viewBox="0 0 400 100"
+            className={`mobile-open_svg stroke-gray ${openNav ? 'hover:stroke-black' : 'hover:stroke-white'} stroke-[6] cursor-pointer transition-colors duration-700`}
+            onClick={handleOpenNav}>
+            <path className="mobile-svg_path-1" d="M 2.5309366,50 H 397.46906" />
+            <path className="mobile-svg_path-2" d="M 2.5309366,2.51542 H 397.46906" />
+            <path className="mobile-svg_path-3" d="M 2.5309366,97.48458 H 397.46906" />
+          </svg>
+        </div>
+
+        <div className="w-full h-full flex flex-col justify-between items-center">
           <div className="flex flex-col gap-6 w-full h-auto items-center pb-6">
             {navLinks.map((link, i) => (
               <Link 
@@ -105,7 +117,7 @@ const Navbar = () => {
                 ref={(e) => (navLinksRef.current[i] = e)}
                 onMouseEnter={() => handleMouseEnter(i)}
                 onMouseLeave={() => handleMouseLeave(i)}
-                className="relative nav-mobile_link opacity-0 -translate-x-[100%] font-montserrat font-light text-[5vw] text-gray hover:text-black will-change-auto transition-colors duration-700"
+                className="relative nav-mobile_link opacity-0 -translate-x-[100%] font-montserrat font-light text-[6vw] text-gray hover:text-black will-change-auto transition-colors duration-700"
                 onClick={handleOpenNav}
               >
                 {link.name}
@@ -116,7 +128,7 @@ const Navbar = () => {
           <div className="flex flex-row gap-8 right-0 top-0">
             {socialLinks.map((link) => (
               <Link key={link.name} href={link.href} target="_blank" className="nav-mobile_link opacity-0 -translate-y-[100%]" onClick={handleOpenNav}>
-                <svg className="fill-gray hover:fill-black transition-colors duration-700 scale-125" viewBox="0 0 576 512" width={30} height={30}>
+                <svg className="fill-gray hover:fill-black transition-colors duration-700 scale-125" viewBox="0 0 576 512" width={26} height={26}>
                   {link.src}
                 </svg>
               </Link>
@@ -174,9 +186,9 @@ const Navbar = () => {
             viewBox="0 0 400 100"
             className={`mobile-open_svg stroke-gray ${openNav ? 'hover:stroke-black' : 'hover:stroke-white'} stroke-[6] cursor-pointer transition-colors duration-700`}
             onClick={handleOpenNav}>
-            <path className="mobile-svg_path-1" d="M 2.5309366,50 H 397.46906" />
-            <path className="mobile-svg_path-2" d="M 2.5309366,2.51542 H 397.46906" />
-            <path className="mobile-svg_path-3" d="M 2.5309366,97.48458 H 397.46906" />
+            <path className="svg_path-1" d="M 2.5309366,50 H 397.46906" />
+            <path className="svg_path-2" d="M 2.5309366,2.51542 H 397.46906" />
+            <path className="svg_path-3" d="M 2.5309366,97.48458 H 397.46906" />
           </svg>
         </div>
       </nav>

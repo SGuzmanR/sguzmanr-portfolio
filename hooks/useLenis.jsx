@@ -6,7 +6,7 @@ const useLenis = () => {
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-      smoothTouch: true
+      // smoothTouch: true
     });
 
     function raf(time) {

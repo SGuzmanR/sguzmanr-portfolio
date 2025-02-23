@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="w-screen h-svh bg-radial-black">
-      <div className="paddingX w-full h-full flex flex-col justify-end items-center pb-20 gap-24">
+      <div className="paddingX w-full h-full flex flex-col justify-end items-center pb-20 max-sm:pb-40 gap-24">
         <div className="hero-wrapper flex flex-col justify-end items-end">
           <p className="hero-title uppercase font-montserrat font-black leading-[.8] text-[15vw]">
             Sergio
@@ -58,12 +58,12 @@ const Hero = () => {
             <p className="hero-title">a</p>
             <p className="hero-title">n</p>
           </div>
-        </div>
 
-        <div>
-          <p className="hero-subtitle font-montserrat text-[15px] max-sm:text-[13px] text-center">
-            Desarrollador Full Stack & <br /> Diseñador Grafico
-          </p>
+          <div className="flex items-center justify-center w-full pt-8">  
+            <p className="hero-subtitle font-montserrat text-[15px] max-sm:text-[13px] text-center">
+              Desarrollador Full Stack & <br /> Diseñador Grafico
+            </p>
+          </div>
         </div>
       </div>
     </section>

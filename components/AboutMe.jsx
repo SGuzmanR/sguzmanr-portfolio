@@ -66,10 +66,10 @@ const AboutMe = () => {
           <p className='about-title'>M</p>
           <p className='about-title'>i</p>
         </div>
-        <p className='about-description w-[80%] text-xl'>
+        <p className='about-description w-[80%] max-sm:w-[90%] max-sm:text-base text-xl'>
           Soy un desarrollador Full Stack, diseñador grafico, 3D y soporte tecnico de Bogotá, Colombia, donde actualmente trabajo como independiente.
         </p>
-        <p className='about-description w-[80%] text-xl'>
+        <p className='about-description w-[80%] max-sm:w-[90%] max-sm:text-base text-xl'>
           Aprovechando mi experiencia en varios sectores industriales y numerosos proyectos, mi objetivo es crear experiencias web de alta gama que eleven a personas y marcas excepcionales.
         </p>
       </div>
