@@ -1,8 +1,7 @@
 export const navLinks = [
   { name: "Sobre Mi", href: "#about" },
   { name: "Portafolio", href: "#portfolio" },
-  // { name: "Servicios", href: "#services" },.
-  { name: "Contacto", href: "#contact" },
+  // { name: "Servicios", href: "#services" },  { name: "Contacto", href: "#contact" },
 ];
 
 export const socialLinks = [
@@ -73,16 +72,16 @@ export const projects = [
     id: 5,
     title: "BikeHub",
     des: "Exposición de Motos",
-    img: "./projects/P5.png",
-    imgAlt: "./projects/P5_2.png",
+    img: "projects/P5.png",
+    imgAlt: "projects/P5_2.png",
     link: "https://bikehub-two.vercel.app/",
   },
   {
     id: 6,
     title: "Apple Website",
     des: "Clon página oficial de Apple 15",
-    img: "./projects/P6.png",
-    imgAlt: "./projects/P6_2.png",
+    img: "projects/P6.png",
+    imgAlt: "projects/P6_2.png",
     link: "https://sguzmanr.github.io/apple_website/",
   },
   // {
