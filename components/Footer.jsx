@@ -1,13 +1,41 @@
 "use client"
 
-import Link from "next/link";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 import { navLinks, socialLinks } from "@/constants";
 
 const Footer = () => {
   const footerLinksRef = useRef([]);
+
+  useEffect(() => {
+    const container = document.querySelector('#contact-div');
+    const letters = document.querySelectorAll('.contact-div-title');
+
+    // Cuando se hace hover sobre el contenedor
+    container.addEventListener('mouseenter', () => {
+      gsap.to(letters, {
+        x: () => gsap.utils.random(-50, 50), // Movimiento aleatorio en el eje X
+        y: () => gsap.utils.random(-50, 50), // Movimiento aleatorio en el eje Y
+        rotation: () => gsap.utils.random(-30, 30), // Rotación aleatoria
+        duration: 0.6,
+        ease: 'power3.out',
+      });
+    });
+
+    // Cuando se quita el hover
+    container.addEventListener('mouseleave', () => {
+      gsap.to(letters, {
+        x: 0, // Vuelven a la posición original
+        y: 0,
+        rotation: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+      });
+    });
+
+  }, []);
 
   const handleMouseEnter = (i) => {
     gsap.to(footerLinksRef.current[i].querySelector('.footer-link_underline'), {
@@ -26,13 +54,24 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="paddingX flex flex-col w-full justify-center items-center gap-4 py-6 h-auto">
-      {/* <div className="w-full h-[90vh]">
+    <footer id="contact" className="paddingX flex flex-col w-full justify-center items-center gap-4 py-8 h-screen bg-radial-black">
+      <div className="relative w-full h-[90%] flex flex-col justify-center items-center">
+        <Link href="https://www.linkedin.com/in/sguzmanr/" id="contact-div" className="cursor-pointer font-montserrat font-bold text-[8vw] leading-[.8] flex flex-row">
+          <p className="contact-div-title">C</p>
+          <p className="contact-div-title">O</p>
+          <p className="contact-div-title">N</p>
+          <p className="contact-div-title">T</p>
+          <p className="contact-div-title">A</p>
+          <p className="contact-div-title">C</p>
+          <p className="contact-div-title">T</p>
+          <p className="contact-div-title">A</p>
+          <p className="contact-div-title">M</p>
+          <p className="contact-div-title">E</p>
+        </Link>
+      </div>
 
-      </div> */}
-
-      <div className="w-full h-[10vh] flex flex-col gap-3">
-        <div className="flex flex-row justify-between items-end w-full max-sm:flex-col max-sm:items-start max-sm:gap-5">
+      <div className="w-full h-auto flex flex-col gap-8 max-sm:gap-16">
+        <div className="flex flex-row justify-between items-end w-full max-sm:flex-col max-sm:items-center max-sm:gap-5">
           <Link href="/" className="footer-link">
             <svg
               width="80"
@@ -45,7 +84,7 @@ const Footer = () => {
             </svg>
           </Link>
 
-          <div className="flex flex-row gap-6 h-auto">
+          <div className="flex flex-row gap-4 h-auto flex-wrap items-center justify-center">
             {navLinks.map((link, i) => (
               <Link 
                 key={link.name} 
@@ -72,9 +111,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-end w-full max-sm:flex-col max-sm:items-start max-sm:gap-5">
-          <p className="font-montserrat text-sm text-white/80">&copy;2025 SGuzmanR</p>
-          <span  className="font-montserrat text-sm text-white/80">Todos los derechos reservados</span>
+        <div className="flex justify-between items-end w-full max-sm:flex-col max-sm:items-center max-sm:gap-2">
+          <p className="font-montserrat text-sm text-gray">
+            &copy;2025 SGuzmanR
+          </p>
+          <span  className="font-montserrat text-sm text-gray">
+            Todos los derechos reservados
+          </span>
         </div>
       </div>
     </footer>

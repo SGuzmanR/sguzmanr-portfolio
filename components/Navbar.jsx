@@ -109,7 +109,7 @@ const Navbar = () => {
         </div>
 
         <div className="w-full h-full flex flex-col justify-between items-center">
-          <div className="flex flex-col gap-6 w-full h-auto items-center pb-6">
+          <div className="flex flex-col gap-6 w-full h-auto items-center py-8">
             {navLinks.map((link, i) => (
               <Link 
                 key={link.name} 
@@ -125,7 +125,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex flex-row gap-8 right-0 top-0">
+          <div className="flex flex-row gap-6 right-0 top-0">
             {socialLinks.map((link) => (
               <Link key={link.name} href={link.href} target="_blank" className="nav-mobile_link opacity-0 -translate-y-[100%]" onClick={handleOpenNav}>
                 <svg className="fill-gray hover:fill-black transition-colors duration-700 scale-125" viewBox="0 0 576 512" width={26} height={26}>

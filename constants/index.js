@@ -2,7 +2,7 @@ export const navLinks = [
   { name: "Sobre Mi", href: "#about" },
   { name: "Portafolio", href: "#portfolio" },
   // { name: "Servicios", href: "#services" },  
-  // { name: "Contacto", href: "#contact" },
+  { name: "Contacto", href: "#contact" },
 ];
 
 export const socialLinks = [
@@ -61,29 +61,29 @@ export const projects = [
   {
     title: "BikeHub",
     des: "Exposición de Motos",
-    img: "public/projects/P5.png",
-    imgAlt: "/projects/P5_2.png",
+    img: "/projects/P5.webp",
+    imgAlt: "/projects/P5_2.webp",
     link: "https://bikehub-two.vercel.app/",
   },
   {
-    title: "Apple Website",
+    title: "Apple",
     des: "Clon página oficial de Apple 15",
-    img: "public/projects/P6.png",
-    imgAlt: "/projects/P6_2.png",
+    img: "/projects/P6.webp",
+    imgAlt: "/projects/P6_2.webp",
     link: "https://sguzmanr.github.io/apple_website/",
   },
-  // {
-  //   title: "Movie App",
-  //   des: "A Movie App for browsing and searching movies.",
-  //   img: "/projects/P7.png",
-  //   imgAlt: "/projects/P7_2.png",
-  //   link: "https://movie-app-ecru-beta.vercel.app/",
-  // },
-    // {
-  //   title: "Zentry Awwwards",
-  //   des: "Replica de Zentry (Awwwards Site Of The Month)",
-  //   img: "/projects/P4.png",
-  //   imgAlt: "/projects/P4_2.png",
-  //   link: "https://zentry-awwwards-ruby.vercel.app/",
-  // },
+  {
+    title: "Movie App",
+    des: "Navega y descubre peliculas",
+    img: "/projects/P8.webp",
+    imgAlt: "/projects/P8_2.webp",
+    link: "https://movie-app-ecru-beta.vercel.app/",
+  },
+  {
+    title: "Zentry",
+    des: "Replica Awwwards SOTM",
+    img: "/projects/P7.webp",
+    imgAlt: "/projects/P7_2.webp",
+    link: "https://zentry-awwwards-ruby.vercel.app/",
+  },
 ];

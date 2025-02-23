@@ -18,20 +18,29 @@ const birthstone = Birthstone({
 
 export const metadata = {
   title: "SGuzmanR Portafolio",
-  description: "Explora mi portafolio, Desarrollador Full Stack, Diseñador Grafico y Tecnico en Computadoras.",
+  description: "Bienvenido a portafolio de Sergio Guzmán, un experto en desarrollo Full Stack, diseño gráfico, y soluciones tecnológicas personalizadas. Explora mis proyectos de desarrollo web, diseño UX/UI y aplicaciones innovadoras.",
   author: "Sergio Guzman",
   keywords: [
-    "Full Stack",
-    "Digital Solution Specilist",
-    "Web Developer",
-    "UX/UI Designer",
-    "Front-End Development",
-    "Back-End Development",
-    "Web Design Portfolio",
-    "Web Application Development",
-    "Creative Web Solutions",
-    "Digital Design Portfolio",
+    "Desarrollador Full Stack",
+    "Soluciones Digitales",
+    "Desarrollador Web",
+    "Diseño UX/UI",
+    "Desarrollo Front-End",
+    "Desarrollo Back-End",
+    "Desarrollo de Aplicaciones Web",
+    "Portafolio Web de Diseño",
+    "Soluciones Creativas Web",
+    "Portafolio de Diseño Digital",
+    "Tecnologías Web Avanzadas",
+    "Servicios Web Profesionales",
+    "Desarrollo de Software",
   ],
+  openGraph: {
+    title: "SGuzmanR Portafolio",
+    description: "Descubre los proyectos más recientes y las soluciones innovadoras de Sergio Guzmán. Especialista en desarrollo Full Stack, diseño UX/UI y más.",
+    url: "https://sguzmanr-portfolio.vercel.app/",
+    site_name: "SGuzmanR Portafolio",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -39,7 +48,6 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={`${montserrat.variable} ${birthstone.variable} antialiased bg-black text-white`}>
         {/* <Preloader /> */}
-
         <Navbar />
         {children}
         <Footer />
