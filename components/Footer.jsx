@@ -18,7 +18,7 @@ const Footer = () => {
         trigger: '#contact',
         start: 'top center',
         end: 'bottom center',
-        markers: true,
+        // markers: true,
         toggleActions: "play reverse play reverse",
       }
     })
