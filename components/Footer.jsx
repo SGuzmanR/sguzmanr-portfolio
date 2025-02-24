@@ -1,55 +1,60 @@
 "use client"
 
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 import { navLinks, socialLinks } from "@/constants";
 
 const Footer = () => {
   const footerLinksRef = useRef([]);
-  const contactRef = useRef();
 
   useEffect(() => {
-    const container = document.querySelector('#contact-div');
-    const letters = document.querySelectorAll('.contact-div-title');
-    const contact = document.querySelector(".contact-text");
+    gsap.registerPlugin(ScrollTrigger);
 
-    gsap.set(contact, { translateX: "-100%" });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top center',
+        end: 'bottom center',
+        markers: true,
+        toggleActions: "play reverse play reverse",
+      }
+    })
 
-    container.addEventListener('mouseenter', () => {
-      gsap.to(letters, {
-        x: () => gsap.utils.random(-50, 50),
-        y: () => gsap.utils.random(-50, 50),
-        rotation: () => gsap.utils.random(-30, 30),
-        duration: 0.6,
-        ease: 'power3.out',
-      });
-      
-      gsap.to(contact, {
-        translateX: 0,
-        duration: 0.3,
-        stagger: 0.3,
-        ease: "sine.inOut",
-      });
+    tl.fromTo(".contact-div-title", {
+      opacity: 0,
+      translateY: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
+      opacity: 1,
+      translateY: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      ease: "power4.inOut",
+      stagger: 0.1,
+    });
+    
+    tl.fromTo(".contact-text", {
+      translateY: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
+      clipPath: "inset(0% 0% 0% 0%)",
+      translateY: 0,
+      duration: 0.5,
+      ease: "sine.inOut",
     });
 
-    container.addEventListener('mouseleave', () => {
-      gsap.to(letters, {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        duration: 0.6,
-        delay: 0.5,
-        ease: 'power3.out',
-      });
-      
-      gsap.to(contact, {
-        translateX: "-100%",
-        ease: "sine.inOut"
-      });
+    tl.fromTo(".footer-link", {
+      opacity: 0,
+    }, {
+      opacity: 1,
+      stagger: {
+        each: 0.1,
+        from: 'start',
+        ease: 'sine.inOut'
+      }
     });
-
   }, []);
 
   const handleMouseEnter = (i) => {
@@ -70,8 +75,8 @@ const Footer = () => {
 
   return (
     <footer id="contact" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-screen bg-radial-black">
-      <div className="relative w-full h-[90%] flex justify-center items-center">
-        <div id="contact-div" className="w-full h-[50%] flex flex-col justify-center items-center">
+      <div className="w-full h-[90%] flex justify-center items-center">
+        <div id="contact-div" className="relative w-full h-[40%] flex flex-col justify-center items-center">
           <Link href="https://www.linkedin.com/in/sguzmanr/" className="cursor-pointer font-montserrat font-bold text-[10vw] leading-[.8] flex flex-row">
             <p className="contact-div-title">C</p>
             <p className="contact-div-title">O</p>
@@ -85,7 +90,7 @@ const Footer = () => {
             <p className="contact-div-title">E</p>
           </Link>
 
-          <Link href="https://www.linkedin.com/in/sguzmanr/" className="contact-text absolute flex items-center justify-center w-full h-[50%] bg-white py-5">
+          <Link href="https://www.linkedin.com/in/sguzmanr/" className="contact-text absolute flex items-center justify-center w-full h-full bg-white py-5">
             <p className="font-birthstone text-black text-center text-wrap text-[10vw] max-sm:text-[13vw]">Y trabajemos Juntos</p>
           </Link>
         </div>
@@ -105,7 +110,7 @@ const Footer = () => {
             </svg>
           </Link>
 
-          <div className="flex flex-row gap-4 h-auto flex-wrap items-center justify-center">
+          <div className="flex flex-row gap-4 h-auto flex-wrap items-center justify-center max-sm:hidden">
             {navLinks.map((link, i) => (
               <Link 
                 key={link.name} 
@@ -133,10 +138,10 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-between items-end w-full max-sm:flex-col max-sm:items-center max-sm:gap-2">
-          <p className="font-montserrat text-sm text-gray">
+          <p className="footer-link font-montserrat text-sm text-gray">
             &copy;2025 SGuzmanR
           </p>
-          <span  className="font-montserrat text-sm text-gray">
+          <span  className="footer-link font-montserrat text-sm text-gray">
             Todos los derechos reservados
           </span>
         </div>
