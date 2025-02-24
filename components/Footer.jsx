@@ -8,30 +8,45 @@ import { navLinks, socialLinks } from "@/constants";
 
 const Footer = () => {
   const footerLinksRef = useRef([]);
+  const contactRef = useRef();
 
   useEffect(() => {
     const container = document.querySelector('#contact-div');
     const letters = document.querySelectorAll('.contact-div-title');
+    const contact = document.querySelector(".contact-text");
 
-    // Cuando se hace hover sobre el contenedor
+    gsap.set(contact, { translateX: "-100%" });
+
     container.addEventListener('mouseenter', () => {
       gsap.to(letters, {
-        x: () => gsap.utils.random(-50, 50), // Movimiento aleatorio en el eje X
-        y: () => gsap.utils.random(-50, 50), // Movimiento aleatorio en el eje Y
-        rotation: () => gsap.utils.random(-30, 30), // Rotación aleatoria
+        x: () => gsap.utils.random(-50, 50),
+        y: () => gsap.utils.random(-50, 50),
+        rotation: () => gsap.utils.random(-30, 30),
         duration: 0.6,
         ease: 'power3.out',
       });
+      
+      gsap.to(contact, {
+        translateX: 0,
+        duration: 0.3,
+        stagger: 0.3,
+        ease: "sine.inOut",
+      });
     });
 
-    // Cuando se quita el hover
     container.addEventListener('mouseleave', () => {
       gsap.to(letters, {
-        x: 0, // Vuelven a la posición original
+        x: 0,
         y: 0,
         rotation: 0,
         duration: 0.6,
+        delay: 0.5,
         ease: 'power3.out',
+      });
+      
+      gsap.to(contact, {
+        translateX: "-100%",
+        ease: "sine.inOut"
       });
     });
 
@@ -54,23 +69,29 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="paddingX flex flex-col w-full justify-center items-center gap-4 py-8 h-screen bg-radial-black">
-      <div className="relative w-full h-[90%] flex flex-col justify-center items-center">
-        <Link href="https://www.linkedin.com/in/sguzmanr/" id="contact-div" className="cursor-pointer font-montserrat font-bold text-[8vw] leading-[.8] flex flex-row">
-          <p className="contact-div-title">C</p>
-          <p className="contact-div-title">O</p>
-          <p className="contact-div-title">N</p>
-          <p className="contact-div-title">T</p>
-          <p className="contact-div-title">A</p>
-          <p className="contact-div-title">C</p>
-          <p className="contact-div-title">T</p>
-          <p className="contact-div-title">A</p>
-          <p className="contact-div-title">M</p>
-          <p className="contact-div-title">E</p>
-        </Link>
+    <footer id="contact" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-screen bg-radial-black">
+      <div className="relative w-full h-[90%] flex justify-center items-center">
+        <div id="contact-div" className="w-full h-[50%] flex flex-col justify-center items-center">
+          <Link href="https://www.linkedin.com/in/sguzmanr/" className="cursor-pointer font-montserrat font-bold text-[10vw] leading-[.8] flex flex-row">
+            <p className="contact-div-title">C</p>
+            <p className="contact-div-title">O</p>
+            <p className="contact-div-title">N</p>
+            <p className="contact-div-title">T</p>
+            <p className="contact-div-title">A</p>
+            <p className="contact-div-title">C</p>
+            <p className="contact-div-title">T</p>
+            <p className="contact-div-title">A</p>
+            <p className="contact-div-title">M</p>
+            <p className="contact-div-title">E</p>
+          </Link>
+
+          <Link href="https://www.linkedin.com/in/sguzmanr/" className="contact-text absolute flex items-center justify-center w-full h-[50%] bg-white py-5">
+            <p className="font-birthstone text-black text-center text-wrap text-[10vw] max-sm:text-[13vw]">Y trabajemos Juntos</p>
+          </Link>
+        </div>
       </div>
 
-      <div className="w-full h-auto flex flex-col gap-8 max-sm:gap-16">
+      <div className="paddingX w-full h-auto flex flex-col gap-8 max-sm:gap-16">
         <div className="flex flex-row justify-between items-end w-full max-sm:flex-col max-sm:items-center max-sm:gap-5">
           <Link href="/" className="footer-link">
             <svg
