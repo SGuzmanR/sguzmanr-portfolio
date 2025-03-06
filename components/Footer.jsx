@@ -74,7 +74,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-screen bg-radial-black">
+    <footer id="contact" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-screen">
       <div className="w-full h-[90%] flex justify-center items-center">
         <div id="contact-div" className="relative w-full h-[40%] flex flex-col justify-center items-center">
           <Link href="https://www.linkedin.com/in/sguzmanr/" className="cursor-pointer font-montserrat font-bold text-[10vw] leading-[.8] flex flex-row">
@@ -90,8 +90,8 @@ const Footer = () => {
             <p className="contact-div-title">E</p>
           </Link>
 
-          <Link href="https://www.linkedin.com/in/sguzmanr/" className="contact-text absolute flex items-center justify-center w-full h-full bg-white py-5">
-            <p className="font-birthstone text-black text-center text-wrap text-[10vw] max-sm:text-[13vw]">Y trabajemos Juntos</p>
+          <Link href="https://www.linkedin.com/in/sguzmanr/" className="contact-text absolute flex items-center justify-center w-full h-full bg-black py-5">
+            <p className="font-birthstone text-white text-center text-wrap text-[10vw] max-sm:text-[13vw]">Y trabajemos Juntos</p>
           </Link>
         </div>
       </div>

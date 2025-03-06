@@ -46,7 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${montserrat.variable} ${birthstone.variable} antialiased bg-black text-white`}>
+      <body className={`${montserrat.variable} ${birthstone.variable} antialiased bg-white text-black`}>
         {/* <Preloader /> */}
         <Navbar />
         {children}

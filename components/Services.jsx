@@ -1,6 +1,9 @@
 import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect } from "react";
+
+import ServicesCards from "./ServicesCards";
+import Link from "next/link";
 
 const Services = () => {
   useEffect(() => {
@@ -8,55 +11,68 @@ const Services = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '#services',
-        start: 'top top',
-        end: 'bottom center',
+        trigger: "#services",
+        start: "top center",
+        end: "bottom center",
         // markers: true,
         toggleActions: "play reverse play reverse",
-        scrub: 1,
-        pin: true,
-      },
+      }
     })
 
-    // tl.fromTo('.sevices-title', {
-    //   opacity: 0,
-    //   translateY: -20,
-    //   clipPath: "inset(0% 0% 100% 0%)",
-    // }, {
-    //   opacity: 1,
-    //   translateY: 0,
-    //   translateX: 0,
-    //   duration: 2,
-    //   stagger: 0.8,
-    //   clipPath: "inset(0% 0% 0% 0%)",
-    // })
+    tl.fromTo(".services-title", {
+      opacity: 0,
+      translateY: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
+      opacity: 1,
+      translateY: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      ease: "power4.inOut",
+    })
 
-    // tl.fromTo(".about-description", {
-    //   translateX: -50,
-    //   opacity: 0
-    // }, {
-    //   translateX: 0,
-    //   opacity: 1,
-    //   stagger: 0.5,
-    //   duration: 2
-    // })
+    tl.fromTo(".services-subtitle", {
+      opacity: 0,
+      translateX: 20,
+      clipPath: "inset(0% 0% 100% 0%)",
+    }, {
+      opacity: 1,
+      translateX: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      ease: "power4.inOut",
+    })
 
-    tl.fromTo('.services-vertical-line', { height: 0 }, {
-      height: '100%',
-      duration: 8,
-      ease: "sine.out",
-    });
+    tl.fromTo(".services-btn", {
+      opacity: 0,
+      translateX: -20,
+    }, {
+      opacity: 1,
+      translateX: 0,
+      ease: "power4.inOut",
+    })
   }, []);
 
   return (
-    <section id='services' className='relative h-screen w-full bg-white z-20'>
-      <div className='services-vertical-line w-1 h-full bg-radial-black absolute left-[10%] top-0' />
+    <section id="services" className="w-full h-auto">
+      <div className="w-full paddingX flex flex-row max-sm:flex-col justify-between items-center gap-5">
+        <div className="w-full mt-16 flex flex-col">
+          <h2 className="services-title text-[8vw] max-sm:text-[10vw] font-extrabold">SERVICIOS</h2>
+          <p className="services-subtitle text-wrap text-[2vw] max-sm:text-[4vw]">
+            Encontraremos una solución creativa para todos los problemas de tu negocio
+          </p>
+        </div>
 
-      <div className='h-full w-full flex py-32 paddingX about-wrapper flex-col items-end justify-center text-black text-end text-wrap'>
-        {/* Cards for every service that I offer */}
+        <div className="services-btn w-full flex items-center justify-end">
+          <Link href="/servicios" className="flex flex-row gap-5 bg-white text-black py-3 px-5 rounded-xl text-xl hover:text-white hover:bg-black transition-colors duration-500 fill-black hover:fill-white">
+            Explora Todos
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6"><path d="M493.7 .9L299.4 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309C0 421.1 90.9 512 203 512c72.4 0 139.4-38.6 175.7-101.3L480.8 234.3c6.5-11.1-2.2-25-15.1-24l-29.3 2.3L511.1 18.3c.6-1.5 .9-3.2 .9-4.8C512 6 506 0 498.5 0c-1.7 0-3.3 .3-4.8 .9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256zm0 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/></svg>
+          </Link>
+        </div>
       </div>
-    </section>
-  )
-}
 
-export default Services
+      <ServicesCards />
+    </section>
+  );
+};
+
+export default Services;

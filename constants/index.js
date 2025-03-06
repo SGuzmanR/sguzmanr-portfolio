@@ -1,8 +1,43 @@
 export const navLinks = [
-  { name: "Sobre Mi", href: "#about" },
+  { name: "Inicio", href: "/" },
+  // { name: "Quienes Somos", href: "#about" },
+  { name: "Servicios", href: "#services" },
   { name: "Portafolio", href: "#portfolio" },
-  // { name: "Servicios", href: "#services" },  
-  { name: "Contacto", href: "#contact" },
+];
+
+export const services = [
+  { 
+    title: "Branding", 
+    des: "Refina tu identidad visual para reflejar la personalidad única de tu marca y conectar con tu audiencia de manera auténtica.", 
+    customStyles: "-translate-y-10 max-[1200px]:-translate-y-0",
+    icon: (
+      <path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3L344 320c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-96a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm96 96a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
+    )
+  },
+  { 
+    title: "Desarrollo Web", 
+    des: "Crea un sitio web impactante y funcional que mejora la experiencia del usuario y fortalece la presencia de tu marca en línea.", 
+    customStyles: "translate-y-10 max-[1200px]:-translate-y-0",
+    icon: (
+      <path d="M64 0C28.7 0 0 28.7 0 64L0 352c0 35.3 28.7 64 64 64l176 0-10.7 32L160 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-69.3 0L336 416l176 0c35.3 0 64-28.7 64-64l0-288c0-35.3-28.7-64-64-64L64 0zM512 64l0 224L64 288 64 64l448 0z"/>
+    )
+  },
+  { 
+    title: "Redes Sociales", 
+    des: "Desarrolla estrategias para aumentar la visibilidad y el engagement de tu marca en plataformas sociales clave.", 
+    customStyles: "translate-y-0 max-[1200px]:translate-y-0",
+    icon: (
+      <path d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/>
+    )
+  },
+  { 
+    title: "Soporte Técnico", 
+    des: "Brindamos soporte técnico para optimizar el rendimiento y minimizar los tiempos de inactividad de tus sistemas.", 
+    customStyles: "-translate-y-16 max-[1200px]:-translate-y-0",
+    icon: (
+      <path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+    )
+  }
 ];
 
 export const socialLinks = [

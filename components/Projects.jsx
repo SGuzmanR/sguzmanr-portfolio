@@ -215,29 +215,21 @@ const Slider = () => {
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.portfolio-intro',
-        start: 'top +=600',
-        end: 'bottom top',
+        trigger: '.slider',
+        start: 'top center',
+        end: 'bottom bottom',
         // markers: true,
         toggleActions: "play reverse play reverse",
         scrub: 1,
       },
     })
 
-    tl.fromTo(".portfolio-bg", {
-      height: 0,
-    }, {
-      height: "100%",
-      duration: 2,
-      ease: "sine.inOut"
-    })
-
     tl.fromTo(".slider", {
       opacity: 0,
-      translateY: "-100%"
+      translateX: "-100%"
     }, {
       opacity: 1,
-      translateY: 0,
+      translateX: 0,
       ease: "sine.inOut",
       duration: 2
     })
@@ -277,13 +269,7 @@ const Slider = () => {
 
   return (
     <section id='portfolio' className='w-full h-auto'>
-      <div className='portfolio-intro relative w-full h-[15vh] bg-white'>
-        <div className='absolute portfolio-bg bg-radial-black w-full h-full flex items-center justify-center z-20'>
-          <h2 className='font-montserrat font-bold text-[6vw] max-sm:text-[12vw] text-white'>PORTAFOLIO</h2>
-        </div>
-      </div>
-
-      <div id='slide' className='relative bg-white w-full h-auto'>
+      <div id='slide' className='relative text-white w-full h-auto'>
         <div className='slide-footer'>
           <button type='button' onClick={handlePrevSlide}>&lt;</button>          
           <div className="slide-counter">
