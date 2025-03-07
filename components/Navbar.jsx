@@ -90,7 +90,7 @@ const Navbar = () => {
 
   return (
     <header ref={container} className='flex justify-center items-center'>
-      {/* Mobile Nav */}
+      {/* Nav */}
       <div id='mobile-nav' className='fixed top-0 left-0 w-full h-screen bg-black text-white z-50'>
         <div className='w-full h-full flex flex-col justify-center items-center gap-12'>
           <div className='flex flex-col w-full'>
@@ -113,7 +113,7 @@ const Navbar = () => {
       </div>
 
       <nav id='nav' className='fixed top-6 px-8 w-[70vw] max-sm:w-[95vw] flex justify-between items-center bg-black py-4 rounded-full z-20'>
-        <Link href="/">
+        <Link href="/" aria-label='SGuzmanR Inicio'>
           <svg
             width="70"
             height="100%"
