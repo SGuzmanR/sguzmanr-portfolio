@@ -291,7 +291,7 @@ const Slider = () => {
           </div>
 
           <div className="slide-main-img" ref={mainImageContainerRef}>
-            <a className="slide-main-img-wrapper">
+            <a className="slide-main-img-wrapper" href={projects[0].link}>
               <img src={projects[0].imgAlt} alt={projects[0].title} />
             </a>
           </div>
