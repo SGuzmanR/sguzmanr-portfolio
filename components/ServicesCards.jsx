@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
+import React from "react";
 
 import { services } from "@/constants";
 
@@ -17,16 +18,17 @@ const ServicesCards = () => {
       const icon = service.querySelector(".service-card_icon");
       const container = service.querySelector(".service-card");
 
-      const descriptionWidth = descriptionRef.current.offsetWidth + 50;
+      // let descriptionWidth = descriptionRef.current.getBoundingClientRect().height + 20;
 
       if (window.innerWidth > 1200) {
-        gsap.set(item2, { translateX: descriptionWidth });
+        gsap.set(item2, { translateY: 64, opacity: 0 });
       }
 
       service.addEventListener("mouseenter", () => {
         if (window.innerWidth > 1200) {
           gsap.to(item2, {
-            translateX: 0,
+            translateY: 0,
+            opacity: 1,
             ease: "sine.inOut",
           });
         }
@@ -49,13 +51,14 @@ const ServicesCards = () => {
       service.addEventListener("mouseleave", () => {
         if (window.innerWidth > 1200) { 
           gsap.to(item2, {
-            // translateY: "64px",
-            translateX: descriptionWidth
+            translateY: 64,
+            opacity: 0
+            // translateY: descriptionWidth
           });
         }
 
         gsap.to(item1, {
-          translateX: "-80px",
+          translateX: "-64px",
         });
 
         gsap.to(container, {
@@ -95,16 +98,16 @@ const ServicesCards = () => {
   }, []);
 
   return (
-    <div className="service-card_wrapper flex flex-row w-full h-full justify-between items-center paddingX">
-      <div className="grid grid-cols-4 grid-rows-1 w-full h-screen py-48 max-sm:py-24 justify-center items-end gap-6 max-[1300px]:grid-cols-2 max-[1300px]:grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-4 max-sm:gap-5">
+    <div className="service-card_wrapper flex flex-row w-full h-full justify-between items-center paddingX pb-20 pt-48 max-sm:pt-8">
+      <div className="grid grid-cols-4 grid-rows-1 w-full h-[70vh] max-sm:h-[80vh] justify-center items-center gap-6 max-[1300px]:grid-cols-2 max-[1300px]:grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-4 max-sm:gap-5">
         {services.map((service, i) => (
           <div
             key={i}
-            className={`service-card h-full w-full border-black border-2 rounded-md flex overflow-hidden cursor-pointer ${service.customStyles}`}
+            className={`service-card h-full w-full border-black border-2 rounded-md flex items-center justify-center overflow-hidden cursor-pointer`}
             ref={(el) => (serviceRefs.current[i] = el)}
           >
-            <div className="service-card flex flex-col justify-between h-full w-full p-6 gap-3">
-              <div className="services-card_item1 flex flex-row gap-6 -translate-x-20 items-center">
+            <div className="service-card flex flex-col justify-between h-full w-full py-6 px-4 gap-3">
+              <div className="services-card_item1 flex flex-row gap-6 -translate-x-16 items-center">
                 <svg
                   ref={arrowRef}
                   xmlns="http://www.w3.org/2000/svg"

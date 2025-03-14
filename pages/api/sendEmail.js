@@ -20,9 +20,9 @@ export default async function handler(req, res) {
 
     try {
       const { data, error } = await resend.emails.send({
-        from: 'Contact Form <onboarding@resend.dev>', // Sender email
-        to: ['sguzmanr2@gmail.com'], // Replace with your email
-        subject: `Message from ${name} <${email}>`,
+        from: 'SGuzmanR Webpage <onboarding@resend.dev>',
+        to: ['sguzmanr2@gmail.com'],
+        subject: `${name} <${email}>`,
         react: content,
       });
 

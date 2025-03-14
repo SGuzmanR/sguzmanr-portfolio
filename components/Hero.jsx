@@ -47,7 +47,7 @@ const Hero = () => {
     <section id="hero" className="w-screen h-screen">
       <div className="paddingX w-full h-full flex flex-col justify-end items-center pb-20 max-sm:pb-40 gap-24">
         <div className="hero-wrapper flex flex-col justify-end items-end">
-          <p className="hero-title uppercase font-montserrat font-black leading-[.8] max-sm:text-[15vw] text-[13vw]">
+          <p className="hero-title uppercase font-montserrat font-black leading-[.8] max-sm:text-[18vw] text-[13vw]">
             Sergio
           </p> 
           <div className="font-birthstone text-[96px] max-sm:text-[50px] leading-[.8] flex flex-row">

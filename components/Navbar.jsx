@@ -36,22 +36,24 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    gsap.set("#mobile-nav", { translateX: "-100%" });
+    // gsap.set("#mobile-nav", { translateX: "-100%" });
     gsap.set(".mobile-nav_link", {
-      clipPath: "polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)",
-      translateY: "100%"
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      opacity: 0,
+      translateY: "100%",
     });
 
     tl.current = gsap.timeline({ paused: true })
       .to("#mobile-nav", {
-        translateX: 0,
+        translateY: 0,
         duration: 0.5,
         ease: "sine.in"
       })
       .to(".mobile-nav_link", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         translateY: 0,
-        stagger: 0.1
+        stagger: 0.1,
+        opacity: 1
       })
   }, []);
 
@@ -87,9 +89,9 @@ const Navbar = () => {
   return (
     <header ref={container} className='flex justify-center items-center'>
       {/* Open Nav */}
-      <div id='mobile-nav' className='fixed top-0 left-0 w-full h-screen bg-black text-white z-50'>
+      <div id='mobile-nav' className='fixed top-0 left-0 w-full h-screen bg-black text-white z-50 -translate-y-[100%]'>
         <div className='w-full h-full flex flex-col justify-center items-center gap-8'>
-          <div className='bg-white text-black w-full h-auto'>
+          <div className='bg-white text-black w-full h-auto mobile-nav_link'>
             <div className='w-full flex justify-between paddingX py-4 max-sm:flex-col max-sm:gap-6'>
               <div className='flex flex-row gap-4 justify-center items-center'>
                 {socialLinks.map((link) => (

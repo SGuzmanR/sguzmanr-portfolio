@@ -52,7 +52,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-auto">
+    <footer id="footer" className="flex flex-col w-full justify-center items-center gap-4 py-8 h-[20vh]">
       <div className="paddingX w-full h-auto flex flex-col gap-8 max-sm:gap-16">
         <div className="flex flex-row justify-between items-end w-full max-sm:flex-col max-sm:items-center max-sm:gap-5">
           <Link href="/" className="footer-link">
