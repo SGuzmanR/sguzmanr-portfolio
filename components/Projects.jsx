@@ -269,7 +269,7 @@ const Slider = () => {
 
   return (
     <section id='portfolio' className='w-full h-auto'>
-      <div id='slide' className='relative text-white w-full h-auto'>
+      <div id='slide' className='relative text-white w-full h-screen max-sm:h-[100lvh]'>
         <div className='slide-footer'>
           <button type='button' onClick={handlePrevSlide}>&lt;</button>          
           <div className="slide-counter">
