@@ -2,9 +2,10 @@
 
 import useLenis from "@/hooks/useLenis";
 import Hero from "@/components/Hero";
-import AboutMe from "@/components/AboutMe";
+import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   useLenis();
@@ -12,9 +13,10 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <Hero />
-      {/* <AboutMe /> */}
+      {/* <AboutUs /> */}
       <Services />
       <Projects />
+      <Contact />
     </main>
   );
-}
+};

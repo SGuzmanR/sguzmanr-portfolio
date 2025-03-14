@@ -248,6 +248,17 @@ body {
   }
 }
 
+@media (max-width: 350px) {
+  .slide-main-img {
+    top: 50%;
+  }
+
+  .slide-copy {
+    top: 20%;
+    left: 85%;
+  }
+}
+
 /* SCROLL BAR */
 ::-webkit-scrollbar {
   width: 5px;
