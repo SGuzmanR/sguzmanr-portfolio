@@ -49,7 +49,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form flex flex-col justify-center items-center gap-6 paddingX w-full" noValidate>
+    <form onSubmit={handleSubmit} className="contact-form flex flex-col justify-center items-center gap-6 paddingX w-full h-full py-4" noValidate>
       {/* Name Input */}
       <div className="relative z-0 w-full mb-5 group">
         <input

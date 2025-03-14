@@ -55,8 +55,8 @@ const Contact = () => {
   }, []); 
 
   return (
-    <section id="contact" className="w-full h-[80vh] flex justify-center items-center paddingX flex-col gap-8">
-      <div className="flex text-[8vw] max-sm:text-[12vw] font-extrabold">
+    <section id="contact" className="w-full h-[80vh] flex justify-center items-center paddingX flex-col pt-24">
+      <div className="flex text-[8vw] max-sm:text-[12vw] font-extrabold -z-10">
         <p className="contact-title">C</p>
         <p className="contact-title">O</p>
         <p className="contact-title">N</p>
