@@ -271,7 +271,7 @@ body {
 
 @media (max-width: 400px) {
   .slide-main-img {
-    top: 30%;
+    top: 50%;
     width: 70%;
   }
 
@@ -283,7 +283,7 @@ body {
 
 @media (max-width: 360px) {
   .slide-main-img {
-    top: 40%;
+    top: 50%;
     width: 70%;
   }
 
