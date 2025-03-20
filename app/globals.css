@@ -150,12 +150,15 @@ body {
   height: 100%;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   will-change: clip-path;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide-copy {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 25%;
   transform: translate(-50%, -50%);
   color: var(--white);
   z-index: 2;
@@ -269,6 +272,18 @@ body {
 @media (max-width: 400px) {
   .slide-main-img {
     top: 30%;
+    width: 70%;
+  }
+
+  .slide-copy {
+    top: 20%;
+    left: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+  .slide-main-img {
+    top: 40%;
     width: 70%;
   }
 

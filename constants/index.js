@@ -72,20 +72,20 @@ export const socialLinks = [
 ];
 
 export const projects = [
-  // {
-  //   title: "MADAW",
-  //   des: "",
-  //   img: "/projects/P1.png",
-  //   imgAlt: "/projects/P1_2.png",
-  //   link: "",
-  // },
-  // {
-  //   title: "Publision",
-  //   des: "",
-  //   img: "/projects/P2.png",
-  //   imgAlt: "/projects/P2_2.png",
-  //   link: "",
-  // },
+  {
+    title: "Alien Studio",
+    des: "Negocio de publicidad",
+    img: "/projects/P1.webp",
+    imgAlt: "/projects/P1_2.webp",
+    link: "",
+  },
+  {
+    title: "Publision",
+    des: "Negocio de publicidad",
+    img: "/projects/P2.webp",
+    imgAlt: "/projects/P2_2.webp",
+    link: "",
+  },
   // {
   //   title: " - Red Social",
   //   des: "",

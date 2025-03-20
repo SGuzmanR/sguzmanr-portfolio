@@ -269,9 +269,9 @@ const Slider = () => {
 
   return (
     <section id='portfolio' className='w-full h-auto'>
-      <div id='slide' className='relative text-white w-full h-screen max-sm:h-[100lvh]'>
+      <div id='slide' className='relative text-white w-full min-h-screen max-sm:h-[100dvh]'>
         <div className='slide-footer'>
-          <button type='button' onClick={handlePrevSlide}>&lt;</button>          
+          <button type='button' onClick={handlePrevSlide} className='bg-black text-white py-2 px-4 rounded-md'>&lt;</button>          
           <div className="slide-counter">
             <div className="count" ref={counterContainerRef}>
               <p>1</p>
@@ -280,7 +280,7 @@ const Slider = () => {
             <p>{projects.length}</p>
           </div>
 
-          <button type='button' onClick={handleNextSlide}>&gt;</button>
+          <button type='button' onClick={handleNextSlide} className='bg-black text-white py-2 px-4 rounded-md'>&gt;</button>
         </div>
 
         <div className="slider" ref={sliderRef}>
