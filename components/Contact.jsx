@@ -50,12 +50,11 @@ const Contact = () => {
       translateX: 0,
       clipPath: "inset(0% 0% 0% 0%)",
       ease: "power4.inOut",
-      stagger: 0.1,
     });
   }, []); 
 
   return (
-    <section id="contact" className="w-full h-[80vh] flex justify-center items-center paddingX flex-col pt-24">
+    <section id="contact" className="w-full h-[90vh] flex justify-center items-center paddingX flex-col pt-24">
       <div className="flex text-[8vw] max-sm:text-[12vw] font-extrabold -z-10">
         <p className="contact-title">C</p>
         <p className="contact-title">O</p>

@@ -36,9 +36,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // gsap.set("#mobile-nav", { translateX: "-100%" });
     gsap.set(".mobile-nav_link", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       opacity: 0,
       translateY: "100%",
     });
@@ -50,7 +48,6 @@ const Navbar = () => {
         ease: "sine.in"
       })
       .to(".mobile-nav_link", {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         translateY: 0,
         stagger: 0.1,
         opacity: 1
